@@ -1,0 +1,162 @@
+{
+  "actions": [
+    {
+      "name": "/actions/default/in/SkeletonLeftHand",
+      "type": "skeleton",
+      "skeleton": "/skeleton/hand/left"
+    },
+    {
+      "name": "/actions/default/in/SkeletonRightHand",
+      "type": "skeleton",
+      "skeleton": "/skeleton/hand/right"
+    },
+    {
+      "name": "/actions/default/in/LeftHandPose",
+      "type": "pose"
+    },
+    {
+      "name": "/actions/default/in/RightHandPose",
+      "type": "pose"
+    },
+    {
+      "name": "/actions/default/in/ui_confirm",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/ui_back",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/ui_navigate",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/game_action_confirm",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_actionbar",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_pause",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_halt",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_move",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/game_turncamera",
+      "type": "vector2"
+    },
+    {
+      "name": "/actions/default/in/game_group",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_menus",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_switchpov",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_grableft",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/game_grabright",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/out/Haptic",
+      "type": "vibration"
+    }
+  ],
+  "action_sets": [
+    {
+      "name": "/actions/default",
+      "usage": "leftright"
+    }
+  ],
+  "default_bindings": [
+    {
+      "controller_type": "vive_controller",
+      "binding_url": "bindings_vive_controller.json"
+    },
+    {
+      "controller_type": "oculus_touch",
+      "binding_url": "bindings_oculus_touch.json"
+    },
+    {
+      "controller_type": "knuckles",
+      "binding_url": "bindings_knuckles.json"
+    },
+    {
+      "controller_type": "holographic_controller",
+      "binding_url": "bindings_holographic_controller.json"
+    },
+    {
+      "controller_type": "vive_cosmos_controller",
+      "binding_url": "bindings_vive_cosmos_controller.json"
+    },
+    {
+      "controller_type": "vive_cosmos",
+      "binding_url": "binding_vive_cosmos.json"
+    },
+    {
+      "controller_type": "vive",
+      "binding_url": "binding_vive.json"
+    },
+    {
+      "controller_type": "index_hmd",
+      "binding_url": "binding_index_hmd.json"
+    },
+    {
+      "controller_type": "vive_pro",
+      "binding_url": "binding_vive_pro.json"
+    },
+    {
+      "controller_type": "rift",
+      "binding_url": "binding_rift.json"
+    },
+    {
+      "controller_type": "holographic_hmd",
+      "binding_url": "binding_holographic_hmd.json"
+    },
+    {
+      "controller_type": "vive_tracker_camera",
+      "binding_url": "binding_vive_tracker_camera.json"
+    }
+  ],
+  "localization": [
+    {
+      "language_tag": "en_US",
+      "/actions/default/in/SkeletonLeftHand": "Skeleton (Left)",
+      "/actions/default/in/SkeletonRightHand": "Skeleton (Right)",
+      "/actions/default/out/Haptic": "Haptic",
+      "/actions/default/in/LeftHandPose": "Left Hand Pose",
+      "/actions/default/in/RightHandPose": "Right Hand Pose",
+      "/actions/default/in/ui_confirm": "UI Confirm",
+      "/actions/default/in/ui_back": "UI Back",
+      "/actions/default/in/ui_navigate": "UI Navigate",
+      "/actions/default/in/game_action_confirm": "Game Action or Confirm",
+      "/actions/default/in/game_actionbar": "Game ActionBar",
+      "/actions/default/in/game_pause": "Game Pause",
+      "/actions/default/in/game_halt": "Game Halt Actions",
+      "/actions/default/in/game_move": "Game Move",
+      "/actions/default/in/game_turncamera": "Game POV Turn Camera",
+      "/actions/default/in/game_group": "Game Group",
+      "/actions/default/in/game_menus": "Game Menus",
+      "/actions/default/in/game_switchpov": "Game Switch POV",
+      "/actions/default/in/game_grableft": "Game Grab (Left)",
+      "/actions/default/in/game_grabright": "Game Grab (Right)"
+    }
+  ]
+}
