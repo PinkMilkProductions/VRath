@@ -49,7 +49,7 @@ namespace VRMaker
             // Plugin startup logic
             Logger.LogInfo($"Plugin {PLUGIN_GUID} is loaded!");
 
-            //new AssetLoader();
+            new AssetLoader();
 
             Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly());
 
@@ -112,17 +112,17 @@ namespace VRMaker
 
             
             
-            UnityEngine.XR.XRSettings.LoadDeviceByName(UnityEngine.XR.XRSettings.loadedDeviceName);
+            //UnityEngine.XR.XRSettings.LoadDeviceByName(UnityEngine.XR.XRSettings.loadedDeviceName);
 
-            SubsystemManager.GetInstances(displays);
-            MyDisplay = displays[0];
-            MyDisplay.Start();
+            //SubsystemManager.GetInstances(displays);
+            //MyDisplay = displays[0];
+            //MyDisplay.Start();
 
             //Logs.WriteInfo("XRDisplaySubSystem running: ");
             //Logs.WriteInfo(MyDisplay.IsRunning());
 
-            //StereoRendering myVRHelper = new StereoRendering();
-            //myVRHelper.Awake();
+            StereoRendering myVRHelper = new StereoRendering();
+            myVRHelper.Awake();
 
             Logs.WriteInfo("Reach end of InitVRLoader(): ");
 

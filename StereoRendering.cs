@@ -38,12 +38,14 @@ namespace VRMaker
             var cmd = UnityEngine.Rendering.CommandBufferPool.Get(k_RenderTag);
             var dest = renderPass.renderTarget;
 
+
             //Graphics.Blit(source, dest, stereoMat, 0);
 
             //int temp = TempTargetId;
             //cmd.GetTemporaryRTWithDescriptor(temp, renderPass.renderTargetDesc, FilterMode.Point);
 
             cmd.Blit(source, dest, stereoMat, 0);
+            //cmd.SetRenderTarget(dest);
 
             //context.ExecuteCommandBuffer(cmd);
             //context.Submit();

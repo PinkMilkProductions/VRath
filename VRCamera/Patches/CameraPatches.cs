@@ -7,6 +7,7 @@ using HarmonyLib;
 using UnityEngine;
 using UnityEngine.Profiling;
 using Kingmaker;
+using Valve.VR;
 
 
 namespace VRMaker
@@ -19,6 +20,7 @@ namespace VRMaker
         private static void FixNearClipping()
         {
             CameraManager.ReduceNearClipping();
+            Kingmaker.Game.GetCamera().gameObject.AddComponent<SteamVR_TrackedObject>();
             /*
             if (Plugin.HMDModel == "Vive MV")
             {
