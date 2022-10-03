@@ -19,8 +19,27 @@ namespace VRMaker
         [HarmonyPatch(typeof(Kingmaker.View.CameraRig), nameof(Kingmaker.View.CameraRig.OnEnable))]
         private static void FixNearClipping()
         {
+            Logs.WriteInfo("CameraRig OnEnable started");
             CameraManager.ReduceNearClipping();
             Kingmaker.Game.GetCamera().gameObject.AddComponent<SteamVR_TrackedObject>();
+            //Kingmaker.Game.GetCamera().stereoTargetEye = StereoTargetEyeMask.Both;
+            //var myVRHelper = Kingmaker.Game.GetCamera().gameObject.AddComponent<StereoRendering>();
+            //myVRHelper.enabled = true;
+
+            Kingmaker.Game.GetCamera().fieldOfView = SteamVR.instance.fieldOfView;
+            Kingmaker.Game.GetCamera().stereoTargetEye = StereoTargetEyeMask.Left;
+            Kingmaker.Game.GetCamera().projectionMatrix = Kingmaker.Game.GetCamera().GetStereoProjectionMatrix(Camera.StereoscopicEye.Left);
+            Kingmaker.Game.GetCamera().targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(0);
+
+            Plugin.SecondEye = new GameObject("SecondEye");
+            Plugin.SecondCam = Plugin.SecondEye.AddComponent<Camera>();
+            Plugin.SecondCam.enabled = true;
+            Plugin.SecondCam.CopyFrom(Kingmaker.Game.GetCamera());
+            Plugin.SecondCam.gameObject.AddComponent<SteamVR_TrackedObject>();
+            Plugin.SecondCam.stereoTargetEye = StereoTargetEyeMask.Right;
+            Plugin.SecondCam.projectionMatrix = Plugin.SecondCam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right);
+            Plugin.SecondCam.targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(1);
+
             /*
             if (Plugin.HMDModel == "Vive MV")
             {
@@ -28,7 +47,7 @@ namespace VRMaker
                 CurrentCamera.GetComponent<Kingmaker.Visual.FogOfWar.FogOfWarScreenSpaceRenderer>().enabled = false;
             }
             */
-            
+
         }
 
         [HarmonyPostfix]

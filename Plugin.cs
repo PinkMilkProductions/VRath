@@ -33,7 +33,10 @@ namespace VRMaker
         public static List<UnityEngine.XR.XRDisplaySubsystem> displays = new List<UnityEngine.XR.XRDisplaySubsystem>();
         public static UnityEngine.XR.XRDisplaySubsystem MyDisplay = null;
 
-        
+        public static GameObject SecondEye;
+        public static Camera SecondCam;
+
+
 
         //Create a class that actually inherits from MonoBehaviour
         public class MyStaticMB : MonoBehaviour
@@ -110,19 +113,22 @@ namespace VRMaker
 
             SteamVR.Initialize(true);
 
-            
-            
+
+
             //UnityEngine.XR.XRSettings.LoadDeviceByName(UnityEngine.XR.XRSettings.loadedDeviceName);
 
-            //SubsystemManager.GetInstances(displays);
-            //MyDisplay = displays[0];
-            //MyDisplay.Start();
+            SubsystemManager.GetInstances(displays);
+            MyDisplay = displays[0];
+            MyDisplay.Start();
 
-            //Logs.WriteInfo("XRDisplaySubSystem running: ");
-            //Logs.WriteInfo(MyDisplay.IsRunning());
+            Logs.WriteInfo("XRDisplaySubSystem running: ");
+            Logs.WriteInfo(MyDisplay.IsRunning());
 
-            StereoRendering myVRHelper = new StereoRendering();
-            myVRHelper.Awake();
+            //var myVRHelper = myStaticMB.gameObject.AddComponent<StereoRendering>();
+
+            //StereoRendering myVRHelper = new StereoRendering();
+            //myVRHelper.Awake();
+            //myVRHelper.enabled = true;
 
             Logs.WriteInfo("Reach end of InitVRLoader(): ");
 
