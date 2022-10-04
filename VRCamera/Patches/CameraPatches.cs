@@ -17,36 +17,29 @@ namespace VRMaker
     {
         [HarmonyPostfix]
         [HarmonyPatch(typeof(Kingmaker.View.CameraRig), nameof(Kingmaker.View.CameraRig.OnEnable))]
-        private static void FixNearClipping()
+        private static void OnCameraRigEnabled()
         {
             Logs.WriteInfo("CameraRig OnEnable started");
             CameraManager.ReduceNearClipping();
-            Kingmaker.Game.GetCamera().gameObject.AddComponent<SteamVR_TrackedObject>();
-            //Kingmaker.Game.GetCamera().stereoTargetEye = StereoTargetEyeMask.Both;
-            //var myVRHelper = Kingmaker.Game.GetCamera().gameObject.AddComponent<StereoRendering>();
-            //myVRHelper.enabled = true;
 
-            //Kingmaker.Game.GetCamera().fieldOfView = SteamVR.instance.fieldOfView;
-            //Kingmaker.Game.GetCamera().stereoTargetEye = StereoTargetEyeMask.Left;
-            //Kingmaker.Game.GetCamera().projectionMatrix = Kingmaker.Game.GetCamera().GetStereoProjectionMatrix(Camera.StereoscopicEye.Left);
-            //Kingmaker.Game.GetCamera().targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(0);
+            //Without this there is no headtracking
+            Kingmaker.Game.GetCamera().gameObject.AddComponent<SteamVR_TrackedObject>();
 
             Plugin.SecondEye = new GameObject("SecondEye");
             Plugin.SecondCam = Plugin.SecondEye.AddComponent<Camera>();
             Plugin.SecondCam.gameObject.AddComponent<SteamVR_TrackedObject>();
             Plugin.SecondCam.CopyFrom(Kingmaker.Game.GetCamera());
-            //Plugin.SecondCam.enabled = true;
-            //Plugin.SecondCam.stereoTargetEye = StereoTargetEyeMask.Right;
-            //Plugin.SecondCam.projectionMatrix = Plugin.SecondCam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right);
-            //Plugin.SecondCam.targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(1);
 
-            /*
+            // Without this the right eye gets stuck at a very far point in the map
+            Plugin.SecondCam.transform.parent = Kingmaker.Game.GetCamera().transform.parent;
+
+            // Pimax 5K plus causes the fog of war to behave very bad, this is supposed to fix it but doesn't work yet.
             if (Plugin.HMDModel == "Vive MV")
             {
-                Camera CurrentCamera = Game.GetCamera();
-                CurrentCamera.GetComponent<Kingmaker.Visual.FogOfWar.FogOfWarScreenSpaceRenderer>().enabled = false;
+                Logs.WriteInfo("HMD recognised as VIVE MV, disabling FogOfWar");
+                Owlcat.Runtime.Visual.RenderPipeline.RendererFeatures.FogOfWar.FogOfWarFeature.Instance.DisableFeature();
             }
-            */
+            
 
         }
 

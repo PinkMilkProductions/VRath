@@ -32,6 +32,9 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>F:\WOTRGameLibs\package\lib\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
+    <Reference Include="Owlcat.Runtime.Visual">
+      <HintPath>F:\SSD Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.Visual.dll</HintPath>
+    </Reference>
     <Reference Include="Rewired_Core">
       <HintPath>F:\WOTRGameLibs\package\lib\Rewired_Core.dll</HintPath>
     </Reference>

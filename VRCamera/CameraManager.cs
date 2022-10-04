@@ -20,6 +20,12 @@ namespace VRMaker
                 Camera.main.nearClipPlane = NearClipPlaneDistance;
                 Camera.main.farClipPlane = FarClipPlaneDistance;
             }
+            // Fix it for the second stereo camera
+            if (Plugin.SecondCam != null)
+            {
+                Plugin.SecondCam.nearClipPlane = NearClipPlaneDistance;
+                Plugin.SecondCam.farClipPlane = FarClipPlaneDistance;
+            }
 
         }
 
@@ -28,6 +34,13 @@ namespace VRMaker
             Camera CurrentCamera = Game.GetCamera();
             CurrentCamera.nearClipPlane = NearClipPlaneDistance;
             CurrentCamera.farClipPlane = FarClipPlaneDistance;
+
+            // Fix it for the second stereo camera
+            if (Plugin.SecondCam != null)
+            {
+                Plugin.SecondCam.nearClipPlane = NearClipPlaneDistance;
+                Plugin.SecondCam.farClipPlane = FarClipPlaneDistance;
+            }
         }
 
         /*
@@ -214,9 +227,9 @@ namespace VRMaker
             Kingmaker.Game.GetCamera().projectionMatrix = Kingmaker.Game.GetCamera().GetStereoProjectionMatrix(Camera.StereoscopicEye.Left);
             Kingmaker.Game.GetCamera().targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(0);
 
-            Plugin.SecondCam.transform.position = Kingmaker.Game.GetCamera().transform.position;
-            Plugin.SecondCam.transform.rotation = Kingmaker.Game.GetCamera().transform.rotation;
-            Plugin.SecondCam.transform.localScale = Kingmaker.Game.GetCamera().transform.localScale;
+            Plugin.SecondEye.transform.position = Kingmaker.Game.GetCamera().transform.position;
+            Plugin.SecondEye.transform.rotation = Kingmaker.Game.GetCamera().transform.rotation;
+            Plugin.SecondEye.transform.localScale = Kingmaker.Game.GetCamera().transform.localScale;
             Plugin.SecondCam.enabled = true;
             Plugin.SecondCam.stereoTargetEye = StereoTargetEyeMask.Right;
             Plugin.SecondCam.projectionMatrix = Plugin.SecondCam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right);

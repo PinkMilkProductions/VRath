@@ -21,7 +21,7 @@ namespace VRMaker
     {
         public const string PLUGIN_GUID = "com.HerrFristi.VRMods.VRath";
         public const string PLUGIN_NAME = "VRMaker";
-        public const string PLUGIN_VERSION = "0.0.1";
+        public const string PLUGIN_VERSION = "0.0.2";
 
         public static string gameExePath = Process.GetCurrentProcess().MainModule.FileName;
         public static string gamePath = Path.GetDirectoryName(gameExePath);
@@ -68,19 +68,8 @@ namespace VRMaker
             }
 
             myStaticMB.StartCoroutine(InitVRLoader());
-            //InitVR();
 
             //Game.s_Instance.ControllerMode = Game.ControllerModeType.Gamepad;
-        }
-
-        private static void InitVR()
-        {
-            
-
-            //typeof(XRGeneralSettings).GetMethod("AttemptInitializeXRSDKOnLoad", AccessTools.all).Invoke(null, null);
-            //typeof(XRGeneralSettings).GetMethod("AttemptStartXRSDKOnBeforeSplashScreen", AccessTools.all).Invoke(null, null);
-
-
         }
 
         public static System.Collections.IEnumerator InitVRLoader()
@@ -108,29 +97,15 @@ namespace VRMaker
             XRGeneralSettings.AttemptInitializeXRSDKOnLoad();
             XRGeneralSettings.AttemptStartXRSDKOnBeforeSplashScreen();
 
-            //managerSettings.StartSubsystems();
-            //managerSettings.automaticLoading = true;
-
             SteamVR.Initialize(true);
 
-
-
-            //UnityEngine.XR.XRSettings.LoadDeviceByName(UnityEngine.XR.XRSettings.loadedDeviceName);
 
             SubsystemManager.GetInstances(displays);
             MyDisplay = displays[0];
             MyDisplay.Start();
 
-            Logs.WriteInfo("XRDisplaySubSystem running: ");
-            Logs.WriteInfo(MyDisplay.IsRunning());
-
-            //var myVRHelper = myStaticMB.gameObject.AddComponent<StereoRendering>();
-
-            //StereoRendering myVRHelper = new StereoRendering();
-            //myVRHelper.Awake();
-            //myVRHelper.enabled = true;
-
-            Logs.WriteInfo("Reach end of InitVRLoader(): ");
+            Logs.WriteInfo("SteamVR hmd modelnumber: " + SteamVR.instance.hmd_ModelNumber);
+            HMDModel = SteamVR.instance.hmd_ModelNumber;
 
             yield return null;
 

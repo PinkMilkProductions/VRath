@@ -26,15 +26,6 @@ namespace VRMaker
             // The only way i seem to call this stuff
             //Logs.WriteInfo("Update hook called");
             //Controllers.Update();
-            //Logs.WriteInfo("XRDisplaySubSystem drawn to device frames count:  ");
-            //int DeviceDrawnFramesCount = 69;
-            //Plugin.MyDisplay.TryGetFramePresentCount(out DeviceDrawnFramesCount);
-            //Logs.WriteInfo(DeviceDrawnFramesCount);
-
-            //Logs.WriteInfo("XRDisplaySubSystem dropped frames count:  ");
-            //int DroppedFramesCount = 420;
-            //Plugin.MyDisplay.TryGetDroppedFrameCount(out DroppedFramesCount);
-            //Logs.WriteInfo(DroppedFramesCount);
             if(Plugin.SecondCam && Kingmaker.Game.GetCamera())
             {
                 CameraManager.HandleStereoRendering();
