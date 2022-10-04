@@ -35,6 +35,10 @@ namespace VRMaker
             //int DroppedFramesCount = 420;
             //Plugin.MyDisplay.TryGetDroppedFrameCount(out DroppedFramesCount);
             //Logs.WriteInfo(DroppedFramesCount);
+            if(Plugin.SecondCam && Kingmaker.Game.GetCamera())
+            {
+                CameraManager.HandleStereoRendering();
+            }
 
         }
 

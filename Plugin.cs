@@ -33,8 +33,8 @@ namespace VRMaker
         public static List<UnityEngine.XR.XRDisplaySubsystem> displays = new List<UnityEngine.XR.XRDisplaySubsystem>();
         public static UnityEngine.XR.XRDisplaySubsystem MyDisplay = null;
 
-        public static GameObject SecondEye;
-        public static Camera SecondCam;
+        public static GameObject SecondEye = null;
+        public static Camera SecondCam = null;
 
 
 

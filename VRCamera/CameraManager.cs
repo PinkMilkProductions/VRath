@@ -205,7 +205,22 @@ namespace VRMaker
                 // Movement is done via a patch
             }
             
+        }
 
+        public static void HandleStereoRendering()
+        {
+            Kingmaker.Game.GetCamera().fieldOfView = SteamVR.instance.fieldOfView;
+            Kingmaker.Game.GetCamera().stereoTargetEye = StereoTargetEyeMask.Left;
+            Kingmaker.Game.GetCamera().projectionMatrix = Kingmaker.Game.GetCamera().GetStereoProjectionMatrix(Camera.StereoscopicEye.Left);
+            Kingmaker.Game.GetCamera().targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(0);
+
+            Plugin.SecondCam.transform.position = Kingmaker.Game.GetCamera().transform.position;
+            Plugin.SecondCam.transform.rotation = Kingmaker.Game.GetCamera().transform.rotation;
+            Plugin.SecondCam.transform.localScale = Kingmaker.Game.GetCamera().transform.localScale;
+            Plugin.SecondCam.enabled = true;
+            Plugin.SecondCam.stereoTargetEye = StereoTargetEyeMask.Right;
+            Plugin.SecondCam.projectionMatrix = Plugin.SecondCam.GetStereoProjectionMatrix(Camera.StereoscopicEye.Right);
+            Plugin.SecondCam.targetTexture = Plugin.MyDisplay.GetRenderTextureForRenderPass(1);
         }
 
 
