@@ -54,10 +54,12 @@ namespace VRMaker
 
         public static void AddSkyBox()
         {
-            //// ADD THE LOADED SKYBOX !!!!
-            //var SceneSkybox = GameObject.Instantiate(AssetLoader.Skybox, Vector3.zeroVector, Quaternion.identityQuaternion);
-            //SceneSkybox.transform.localScale = new Vector3(999999, 999999, 999999);
-            //SceneSkybox.transform.eulerAngles = new Vector3(270, 0, 0);
+            // ADD THE LOADED SKYBOX !!!!
+            var SceneSkybox = GameObject.Instantiate(AssetLoader.Skybox, Vector3.zeroVector, Quaternion.identityQuaternion);
+            SceneSkybox.transform.localScale = new Vector3(999999, 999999, 999999);
+            SceneSkybox.transform.eulerAngles = new Vector3(270, 0, 0);
+            Renderer rend = SceneSkybox.GetComponent<Renderer>();
+            rend.enabled = true;
         }
 
         public static void SwitchPOV()
@@ -73,7 +75,7 @@ namespace VRMaker
             // If we are not in firstperson
             if (CameraManager.CurrentCameraMode != CameraManager.VRCameraMode.FirstPerson)
             {
-                Logs.WriteInfo("Got past cameramod check");
+                Logs.WriteInfo("Got past cameramode check");
                 if (Game.Instance.Player.MainCharacter != null)
                 {
                     Logs.WriteInfo("Got past maincharacter exist check");
@@ -89,6 +91,7 @@ namespace VRMaker
                     }
 
                     OriginalCamera.transform.parent = VROrigin.transform;
+                    Plugin.SecondCam.transform.parent = VROrigin.transform;
                     if (RightHand)
                         RightHand.transform.parent = VROrigin.transform;
                     if (LeftHand)
@@ -115,11 +118,15 @@ namespace VRMaker
             {
                 RightHand = GameObject.Instantiate(AssetLoader.RightHandBase, Vector3.zeroVector, Quaternion.identityQuaternion);
                 RightHand.transform.parent = VROrigin.transform;
+                Renderer rend = RightHand.GetComponent<Renderer>();
+                rend.enabled = true;
             }
             if (!LeftHand)
             {
                 LeftHand = GameObject.Instantiate(AssetLoader.LeftHandBase, Vector3.zeroVector, Quaternion.identityQuaternion);
                 LeftHand.transform.parent = VROrigin.transform;
+                Renderer rend = LeftHand.GetComponent<Renderer>();
+                rend.enabled = true;
             }
         }
 

@@ -11,6 +11,11 @@
       "skeleton": "/skeleton/hand/right"
     },
     {
+      "name": "/actions/default/in/HeadsetOnHead",
+      "type": "boolean",
+      "requirement": "optional"
+    },
+    {
       "name": "/actions/default/in/LeftHandPose",
       "type": "pose"
     },
@@ -107,6 +112,10 @@
       "binding_url": "bindings_vive_cosmos_controller.json"
     },
     {
+      "controller_type": "logitech_stylus",
+      "binding_url": "bindings_logitech_stylus.json"
+    },
+    {
       "controller_type": "vive_cosmos",
       "binding_url": "binding_vive_cosmos.json"
     },
@@ -115,7 +124,7 @@
       "binding_url": "binding_vive.json"
     },
     {
-      "controller_type": "index_hmd",
+      "controller_type": "indexhmd",
       "binding_url": "binding_index_hmd.json"
     },
     {
@@ -138,25 +147,26 @@
   "localization": [
     {
       "language_tag": "en_US",
+      "/actions/default/in/HeadsetOnHead": "Headset on head (proximity sensor)",
       "/actions/default/in/SkeletonLeftHand": "Skeleton (Left)",
       "/actions/default/in/SkeletonRightHand": "Skeleton (Right)",
       "/actions/default/out/Haptic": "Haptic",
-      "/actions/default/in/LeftHandPose": "Left Hand Pose",
-      "/actions/default/in/RightHandPose": "Right Hand Pose",
-      "/actions/default/in/ui_confirm": "UI Confirm",
-      "/actions/default/in/ui_back": "UI Back",
-      "/actions/default/in/ui_navigate": "UI Navigate",
-      "/actions/default/in/game_action_confirm": "Game Action or Confirm",
-      "/actions/default/in/game_actionbar": "Game ActionBar",
-      "/actions/default/in/game_pause": "Game Pause",
-      "/actions/default/in/game_halt": "Game Halt Actions",
-      "/actions/default/in/game_move": "Game Move",
-      "/actions/default/in/game_turncamera": "Game POV Turn Camera",
-      "/actions/default/in/game_group": "Game Group",
-      "/actions/default/in/game_menus": "Game Menus",
-      "/actions/default/in/game_switchpov": "Game Switch POV",
-      "/actions/default/in/game_grableft": "Game Grab (Left)",
-      "/actions/default/in/game_grabright": "Game Grab (Right)"
+      "/actions/default/in/LeftHandPose": "Hand Pose (Left)",
+      "/actions/default/in/RightHandPose": "Hand Pose (Right)",
+      "/actions/default/in/ui_confirm": "UI Confirm button",
+      "/actions/default/in/ui_back": "UI Back button",
+      "/actions/default/in/ui_navigate": "UI Navigate Stick",
+      "/actions/default/in/game_action_confirm": "Game Action Confirm button",
+      "/actions/default/in/game_actionbar": "Game Actionbar button",
+      "/actions/default/in/game_pause": "Game Pause button",
+      "/actions/default/in/game_halt": "Game Halt Button",
+      "/actions/default/in/game_move": "Game Move Stick",
+      "/actions/default/in/game_turncamera": "Game Turn Camera Stick",
+      "/actions/default/in/game_group": "Game Group Button",
+      "/actions/default/in/game_menus": "Game Menus Button",
+      "/actions/default/in/game_switchpov": "Game Switch POV button",
+      "/actions/default/in/game_grableft": "Game Grab Left",
+      "/actions/default/in/game_grabright": "Game Grab Right"
     }
   ]
 }

@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3569288145
+CRC: 1735709090
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 691b4a2546d58dc3dea2ad9165f19fc5
+    Hash: c758d885914d16012de6fd67a668a2c2
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5e0ecc1675f40e8a2b5d029c4275fccb
+    Hash: 8e938c73f93d08b73d8d7c4fc07c1af1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,7 +15,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
@@ -63,5 +67,5 @@ SerializeReferenceClassIdentifiers:
 Assets:
 - Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab
 - Assets/SteamVR/Prefabs/vr_glove_left_model_slim.prefab
-- Assets/CustomShaders/StereoShader.shader
+- Assets/CustomAssets/SkyboxPrefab.prefab
 Dependencies: []

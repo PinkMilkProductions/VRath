@@ -32,6 +32,9 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>F:\WOTRGameLibs\package\lib\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
+    <Reference Include="Owlcat.Runtime.UI">
+      <HintPath>F:\SSD Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.UI.dll</HintPath>
+    </Reference>
     <Reference Include="Owlcat.Runtime.Visual">
       <HintPath>F:\SSD Games\Pathfinder Wrath of the Righteous\Wrath_Data\Managed\Owlcat.Runtime.Visual.dll</HintPath>
     </Reference>

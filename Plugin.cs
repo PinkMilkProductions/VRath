@@ -107,6 +107,8 @@ namespace VRMaker
             Logs.WriteInfo("SteamVR hmd modelnumber: " + SteamVR.instance.hmd_ModelNumber);
             HMDModel = SteamVR.instance.hmd_ModelNumber;
 
+            new VRInputManager();
+
             yield return null;
 
         }

@@ -12,7 +12,7 @@ namespace VRMaker
     {
         static VRInputManager()
         {
-            //SetUpListeners();
+            SetUpListeners();
         }
 
         public static void SetUpListeners()
@@ -72,7 +72,7 @@ namespace VRMaker
         public static void OnLeftJoystickUpdate(SteamVR_Action_Vector2 fromAction, SteamVR_Input_Sources fromSource, Vector2 axis, Vector2 delta)
         {
             // Doesn't seem to stop joystick drift in it's current state?
-            if (axis.magnitude > 0.1f)
+            if (axis.magnitude > 0.5f)
                 CameraManager.LeftJoystick = axis;
             else
                 CameraManager.LeftJoystick = Vector2.zero;
@@ -81,7 +81,7 @@ namespace VRMaker
         public static void OnRightJoystickUpdate(SteamVR_Action_Vector2 fromAction, SteamVR_Input_Sources fromSource, Vector2 axis, Vector2 delta)
         {
             // Doesn't seem to stop joystick drift in it's current state?
-            if (axis.magnitude > 0.1f)
+            if (axis.magnitude > 0.5f)
                 CameraManager.RightJoystick = axis;
             else
                 CameraManager.RightJoystick = Vector2.zero;

@@ -9,18 +9,16 @@ namespace VRMaker
 {
     class AssetLoader
     {
-        public static Shader StereoShader;
+        public static GameObject Skybox;
         public static GameObject LeftHandBase;
         public static GameObject RightHandBase;
 
         public AssetLoader()
         {
             var VRathBundle = LoadBundle("vrathbundle");
-            StereoShader = VRathBundle.LoadAsset<Shader>("StereoShader");
+            Skybox = LoadAsset<GameObject>(VRathBundle, "CustomAssets/SkyboxPrefab.prefab");
             LeftHandBase = LoadAsset<GameObject>(VRathBundle, "SteamVR/Prefabs/vr_glove_left_model_slim.prefab");
             RightHandBase = LoadAsset<GameObject>(VRathBundle, "SteamVR/Prefabs/vr_glove_right_model_slim.prefab");
-
-            Logs.WriteInfo("Attempted to load shader: " + StereoShader.name);
 
         }
 
