@@ -67,9 +67,9 @@ namespace VRMaker
             Logs.WriteInfo("Entered SwitchPOV function");
 
             // ADD A SKYBOX
-            CameraManager.AddSkyBox();
+            //CameraManager.AddSkyBox();
 
-            Logs.WriteInfo("AddedSkyBox");
+            //Logs.WriteInfo("AddedSkyBox");
 
             Camera OriginalCamera = Game.GetCamera();
             // If we are not in firstperson

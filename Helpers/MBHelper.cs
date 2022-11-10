@@ -21,7 +21,7 @@ namespace VRMaker
 
         protected virtual void Update()
         {
-            Logs.WriteInfo("Update hook called");
+            //Logs.WriteInfo("Update hook called");
             if (Plugin.SecondCam && Kingmaker.Game.GetCamera())
             {
                 CameraManager.HandleStereoRendering();

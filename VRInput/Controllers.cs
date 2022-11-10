@@ -40,8 +40,9 @@ namespace VRMaker
         {
             if (!ControllersAlreadyInit)
             {
-                ReInput.InputSourceUpdateEvent += UpdateVRInputs;
+                //ReInput.InputSourceUpdateEvent += UpdateVRInputs;
                 SetupControllerInputs();
+                ReInput.InputSourceUpdateEvent += UpdateVRInputs;
                 ControllersAlreadyInit = true;
             }
         }

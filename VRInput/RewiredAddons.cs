@@ -53,12 +53,12 @@ namespace VRMaker
                 },
                 new HardwareAxisInfo[]
                 {
-                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, SpecialAxisType.None),
-                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, SpecialAxisType.None),
-                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, SpecialAxisType.None),
-                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, SpecialAxisType.None),
-                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, SpecialAxisType.None),  //analog trigger
-                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, SpecialAxisType.None)  //analog trigger
+                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, 0f, SpecialAxisType.None),
+                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, 0f, SpecialAxisType.None),
+                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, 0f, SpecialAxisType.None),
+                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, 0f, SpecialAxisType.None),
+                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, 0f, SpecialAxisType.None),  //analog trigger
+                    new HardwareAxisInfo(AxisCoordinateMode.Absolute, false, 0f, SpecialAxisType.None)  //analog trigger
                 },
                 new HardwareButtonInfo[] { },
                 null
@@ -98,7 +98,8 @@ namespace VRMaker
 
             CustomController customController = ReInput.controllers.CreateCustomController(newController.id);
 
-            customController.useUpdateCallbacks = false;
+            // Obfuscated version ff customController.useUpdateCallbacks = false;
+            customController.yddPOqFsfUPPololSsmuSowvKto = false;
 
             return customController;
         }
@@ -152,7 +153,7 @@ namespace VRMaker
                 newElementMap.invert = elementMap.invert;
             }
 
-            return ReInput.UserData.fmpEtOISxUiBDFMiRddLezwxpaK(categoryId, controllerId, 0);
+            return ReInput.UserData.vtWyYtVaHBgOItquOkQgUBhormF(categoryId, controllerId, 0);
         }
 
 
