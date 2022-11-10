@@ -27,6 +27,8 @@ namespace VRMaker
         public static string gamePath = Path.GetDirectoryName(gameExePath);
         public static string HMDModel = "";
 
+        public static MBHelper MyHelper;
+
         public static UnityEngine.XR.Management.XRManagerSettings managerSettings = null;
 
         public static List<UnityEngine.XR.XRDisplaySubsystemDescriptor> displaysDescs = new List<UnityEngine.XR.XRDisplaySubsystemDescriptor>();
@@ -70,6 +72,11 @@ namespace VRMaker
             myStaticMB.StartCoroutine(InitVRLoader());
 
             //Game.s_Instance.ControllerMode = Game.ControllerModeType.Gamepad;
+            //Game.Instance.ControllerMode = Game.ControllerModeType.Gamepad;
+
+            //Logs.WriteInfo("ControllerMode is: " + Game.Instance.ControllerMode);
+
+            Logs.WriteInfo("Reached end of Plugin.Awake()");
         }
 
         public static System.Collections.IEnumerator InitVRLoader()
@@ -108,6 +115,8 @@ namespace VRMaker
             HMDModel = SteamVR.instance.hmd_ModelNumber;
 
             new VRInputManager();
+
+            Logs.WriteInfo("Reached end of InitVRLoader");
 
             yield return null;
 

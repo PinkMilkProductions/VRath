@@ -24,59 +24,67 @@
       "type": "pose"
     },
     {
-      "name": "/actions/default/in/ui_confirm",
+      "name": "/actions/default/in/decline",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/ui_back",
+      "name": "/actions/default/in/confirm",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/ui_navigate",
+      "name": "/actions/default/in/actionbar",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/pause",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/move",
       "type": "vector2"
     },
     {
-      "name": "/actions/default/in/game_action_confirm",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/game_actionbar",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/game_pause",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/game_halt",
-      "type": "boolean"
-    },
-    {
-      "name": "/actions/default/in/game_move",
+      "name": "/actions/default/in/movecamera",
       "type": "vector2"
     },
     {
-      "name": "/actions/default/in/game_turncamera",
-      "type": "vector2"
+      "name": "/actions/default/in/group",
+      "type": "vector1"
     },
     {
-      "name": "/actions/default/in/game_group",
+      "name": "/actions/default/in/menus",
+      "type": "vector1"
+    },
+    {
+      "name": "/actions/default/in/switchpov",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/game_menus",
+      "name": "/actions/default/in/grableft",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/game_switchpov",
+      "name": "/actions/default/in/grabright",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/game_grableft",
+      "name": "/actions/default/in/options",
       "type": "boolean"
     },
     {
-      "name": "/actions/default/in/game_grabright",
+      "name": "/actions/default/in/highlight",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/switchturnbased",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/prevtarget",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/default/in/nexttarget",
       "type": "boolean"
     },
     {
@@ -153,20 +161,22 @@
       "/actions/default/out/Haptic": "Haptic",
       "/actions/default/in/LeftHandPose": "Hand Pose (Left)",
       "/actions/default/in/RightHandPose": "Hand Pose (Right)",
-      "/actions/default/in/ui_confirm": "UI Confirm button",
-      "/actions/default/in/ui_back": "UI Back button",
-      "/actions/default/in/ui_navigate": "UI Navigate Stick",
-      "/actions/default/in/game_action_confirm": "Game Action Confirm button",
-      "/actions/default/in/game_actionbar": "Game Actionbar button",
-      "/actions/default/in/game_pause": "Game Pause button",
-      "/actions/default/in/game_halt": "Game Halt Button",
-      "/actions/default/in/game_move": "Game Move Stick",
-      "/actions/default/in/game_turncamera": "Game Turn Camera Stick",
-      "/actions/default/in/game_group": "Game Group Button",
-      "/actions/default/in/game_menus": "Game Menus Button",
-      "/actions/default/in/game_switchpov": "Game Switch POV button",
-      "/actions/default/in/game_grableft": "Game Grab Left",
-      "/actions/default/in/game_grabright": "Game Grab Right"
+      "/actions/default/in/switchpov": "Switch POV Button",
+      "/actions/default/in/grableft": "Grab Left",
+      "/actions/default/in/grabright": "Grab Right",
+      "/actions/default/in/options": "Options Button",
+      "/actions/default/in/highlight": "HighLight Button",
+      "/actions/default/in/switchturnbased": "Switch Turn Based Button",
+      "/actions/default/in/prevtarget": "Previous Target Button",
+      "/actions/default/in/nexttarget": "Next Target Button",
+      "/actions/default/in/menus": "Menus Trigger",
+      "/actions/default/in/group": "Group Menu Trigger",
+      "/actions/default/in/movecamera": "Move Camera Stick",
+      "/actions/default/in/move": "Move Stick",
+      "/actions/default/in/pause": "Pause Button",
+      "/actions/default/in/actionbar": "Actionbar button",
+      "/actions/default/in/confirm": "Confirm Button",
+      "/actions/default/in/decline": "Decline Button"
     }
   ]
 }

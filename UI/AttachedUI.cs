@@ -26,10 +26,10 @@ namespace VRMaker
             // The only way i seem to call this stuff
             //Logs.WriteInfo("Update hook called");
             //Controllers.Update();
-            if(Plugin.SecondCam && Kingmaker.Game.GetCamera())
-            {
-                CameraManager.HandleStereoRendering();
-            }
+            //if(Plugin.SecondCam && Kingmaker.Game.GetCamera())
+            //{
+            //    CameraManager.HandleStereoRendering();
+            //}
 
         }
 

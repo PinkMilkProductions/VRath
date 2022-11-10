@@ -23,7 +23,10 @@ namespace VRMaker
         {
             "com.sinai.unityexplorer_Root", // UnityExplorer.
             "com.sinai.unityexplorer.MouseInspector_Root", // UnityExplorer.
-            "ExplorerCanvas"
+            "ExplorerCanvas",
+            "LogoCanvas",
+            "SplashScreenCanvas",
+            "FadeCanvas"
         };
 
         [HarmonyPrefix]
@@ -35,6 +38,10 @@ namespace VRMaker
                 // This check for !Camera.main needs to stay here,
                 // because without it the map texture will some times be broken. Dunno why.
                 //if (!Camera.main || IsCanvasToIgnore(__instance.name)) return;
+
+                if (!Plugin.MyHelper)
+                    Plugin.MyHelper = MBHelper.Create();
+
 
                 var canvas = __instance.GetComponent<Canvas>(); ;
 

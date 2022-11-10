@@ -18,16 +18,15 @@ namespace VRMaker
         public static void SetUpListeners()
         {
             // BOOLEANS
-            SteamVR_Actions._default.game_group.AddOnStateDownListener(TriggerLeftDown, SteamVR_Input_Sources.Any);
-            SteamVR_Actions._default.game_grabright.AddOnStateDownListener(GrabRightDown, SteamVR_Input_Sources.Any);
-            SteamVR_Actions._default.game_grabright.AddOnStateUpListener(GrabRightUp, SteamVR_Input_Sources.Any);
-            SteamVR_Actions._default.game_grableft.AddOnStateDownListener(GrabLeftDown, SteamVR_Input_Sources.Any);
-            SteamVR_Actions._default.game_grableft.AddOnStateUpListener(GrabLeftUp, SteamVR_Input_Sources.Any);
-            SteamVR_Actions._default.game_switchpov.AddOnStateDownListener(OnSwitchPOVDown, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.grabright.AddOnStateDownListener(GrabRightDown, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.grabright.AddOnStateUpListener(GrabRightUp, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.grableft.AddOnStateDownListener(GrabLeftDown, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.grableft.AddOnStateUpListener(GrabLeftUp, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.switchpov.AddOnStateDownListener(OnSwitchPOVDown, SteamVR_Input_Sources.Any);
 
             // VECTOR 2Ds
-            SteamVR_Actions._default.game_move.AddOnUpdateListener(OnLeftJoystickUpdate, SteamVR_Input_Sources.Any);
-            SteamVR_Actions._default.game_turncamera.AddOnUpdateListener(OnRightJoystickUpdate, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.move.AddOnUpdateListener(OnLeftJoystickUpdate, SteamVR_Input_Sources.Any);
+            SteamVR_Actions._default.movecamera.AddOnUpdateListener(OnRightJoystickUpdate, SteamVR_Input_Sources.Any);
 
             // POSES
             SteamVR_Actions._default.RightHandPose.AddOnUpdateListener(SteamVR_Input_Sources.Any, UpdateRightHand);
@@ -42,11 +41,11 @@ namespace VRMaker
             CameraManager.SpawnHands();
         }
 
-        public static void TriggerLeftDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
-        {
-            Logs.WriteInfo("TriggerLeft is Down");
-            //LogBinds();
-        }
+        //public static void TriggerLeftDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
+        //{
+        //    //Logs.WriteInfo("TriggerLeft is Down");
+        //    LogBinds();
+        //}
 
         public static void GrabRightDown(SteamVR_Action_Boolean fromAction, SteamVR_Input_Sources fromSource)
         {
@@ -72,7 +71,7 @@ namespace VRMaker
         public static void OnLeftJoystickUpdate(SteamVR_Action_Vector2 fromAction, SteamVR_Input_Sources fromSource, Vector2 axis, Vector2 delta)
         {
             // Doesn't seem to stop joystick drift in it's current state?
-            if (axis.magnitude > 0.5f)
+            if (axis.magnitude > 0.1f)
                 CameraManager.LeftJoystick = axis;
             else
                 CameraManager.LeftJoystick = Vector2.zero;
@@ -81,7 +80,7 @@ namespace VRMaker
         public static void OnRightJoystickUpdate(SteamVR_Action_Vector2 fromAction, SteamVR_Input_Sources fromSource, Vector2 axis, Vector2 delta)
         {
             // Doesn't seem to stop joystick drift in it's current state?
-            if (axis.magnitude > 0.5f)
+            if (axis.magnitude > 0.1f)
                 CameraManager.RightJoystick = axis;
             else
                 CameraManager.RightJoystick = Vector2.zero;
@@ -109,35 +108,11 @@ namespace VRMaker
         }
 
 
-        // GAMEPAD STUFF
+        //// GAMEPAD STUFF
 
-        /*
-        public static void LogBinds()
-        {
-            var MyGamePad = Kingmaker.Assets.Console.GamepadInput.GamePad.Instance;
-            List<Kingmaker.Assets.Console.GamepadInput.InputLayer> MyInputLayers = MyGamePad.Layers;
-            foreach(var CurrentInputLayer in MyInputLayers)
-            {
-                Logs.WriteInfo("CurrentInputLayer.ContextName");
-                Logs.WriteInfo(CurrentInputLayer.ContextName);
-
-                List<Kingmaker.Assets.Console.GamepadInput.BindDescription> MyBindDescriptions = CurrentInputLayer.m_Binds;
-                foreach (var CurrentBindDescription in MyBindDescriptions)
-                {
-                    int actionId = CurrentBindDescription.ActionId;
-                    Logs.WriteInfo("ActionId");
-                    Logs.WriteInfo(actionId);
-                    Logs.WriteInfo("ActionId Name");
-                    Logs.WriteInfo(Rewired.ReInput.mapping.Actions[actionId].name);
-                    Logs.WriteInfo("ActionId DescriptiveName");
-                    Logs.WriteInfo(Rewired.ReInput.mapping.Actions[actionId].descriptiveName);
-                    Logs.WriteInfo("EventType");
-                    Logs.WriteInfo(CurrentBindDescription.EventType);
-                    Logs.WriteInfo("Group");
-                    Logs.WriteInfo(CurrentBindDescription.Group);
-                }
-            }
-        }
-        */
+        //public static void LogBinds()
+        //{
+        //    //Controllers.LogAllGameActions(Kingmaker.Assets.Console.GamepadInput.GamePad.Instance.Player);
+        //}
     }
 }
